@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Street Food Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .font-body { font-family: 'Poppins', sans-serif; }
+    
+    .menu-pattern {
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(76, 175, 80, 0.05) 0%, transparent 30%);
+    }
+    
+    .spice-gradient {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+    }
+    
+    .decorative-border {
+      background: linear-gradient(90deg, transparent, #ff6b35, #ffc107, #ff6b35, transparent);
+      height: 3px;
+    }
+    
+    .price-tag {
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .category-pill {
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 193, 7, 0.2));
+      border: 1px solid rgba(255, 107, 53, 0.3);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body">
+  <div id="app-wrapper" class="h-full w-full overflow-auto spice-gradient menu-pattern"><!-- Header -->
+   <header class="relative py-10 px-4 text-center overflow-hidden"><!-- Decorative Elements -->
+    <div class="absolute top-4 left-8 text-5xl float-animation opacity-70">
+     🌶️
+    </div>
+    <div class="absolute top-12 right-12 text-4xl float-animation opacity-70" style="animation-delay: 1s;">
+     🥘
+    </div>
+    <div class="absolute bottom-4 left-1/4 text-3xl float-animation opacity-60" style="animation-delay: 2s;">
+     🫓
+    </div>
+    <div class="relative z-10">
+     <div class="inline-block mb-4"><span class="text-6xl">🍛</span>
+     </div>
+     <h1 id="restaurant-name" class="font-display text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight">Chaat &amp; Chai</h1>
+     <p id="tagline" class="text-xl text-amber-300 font-light tracking-wide">Authentic Flavors from the Streets of India</p>
+     <div class="decorative-border w-64 mx-auto mt-6 rounded-full"></div>
+    </div>
+   </header><!-- Menu Content -->
+   <main class="max-w-6xl mx-auto px-4 pb-12"><!-- Chaats Section -->
+    <section class="mb-12">
+     <div class="flex items-center justify-center gap-3 mb-8"><span class="text-3xl">🥗</span>
+      <h2 class="font-display text-3xl text-white">Chaats</h2><span class="category-pill px-3 py-1 rounded-full text-amber-300 text-sm">Popular</span>
+     </div>
+     <div class="grid md:grid-cols-2 gap-6"><!-- Pani Puri -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-6 border border-slate-700/50">
+       <div class="flex justify-between items-start mb-3">
+        <div class="flex items-center gap-3"><span class="text-4xl">🫧</span>
+         <div>
+          <h3 class="font-display text-xl text-white">Pani Puri</h3>
+          <p class="text-slate-400 text-sm">Golgappa / Puchka</p>
+         </div>
+        </div>
+        <div class="price-tag px-4 py-2 text-white font-semibold">
+         ₹60
+        </div>
+       </div>
+       <p class="text-slate-300 text-sm leading-relaxed">Crispy hollow puris filled with spiced potato, chickpeas &amp; tangy tamarind water. 6 pieces per serving.</p>
+       <div class="flex gap-2 mt-3"><span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded-full">🌱 Vegan</span> <span class="text-xs bg-red-900/50 text-red-400 px-2 py-1 rounded-full">🌶️ Spicy</span>
+       </div>
+      </div><!-- Bhel Puri -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-6 border border-slate-700/50">
+       <div class="flex justify-between items-start mb-3">
+        <div class="flex items-center gap-3"><span class="text-4xl">🥜</span>
+         <div>
+          <h3 class="font-display text-xl text-white">Bhel Puri</h3>
+          <p class="text-slate-400 text-sm">Mumbai Classic</p>
+         </div>
+        </div>
+        <div class="price-tag px-4 py-2 text-white font-semibold">
+         ₹70
+        </div>
+       </div>
+       <p class="text-slate-300 text-sm leading-relaxed">Puffed rice mixed with sev, onions, tomatoes, chutneys &amp; a squeeze of lime. Perfectly crunchy!</p>
+       <div class="flex gap-2 mt-3"><span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded-full">🌱 Vegan</span>
+       </div>
+      </div><!-- Dahi Puri -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-6 border border-slate-700/50">
+       <div class="flex justify-between items-start mb-3">
+        <div class="flex items-center gap-3"><span class="text-4xl">🥛</span>
+         <div>
+          <h3 class="font-display text-xl text-white">Dahi Puri</h3>
+          <p class="text-slate-400 text-sm">Creamy Delight</p>
+         </div>
+        </div>
+        <div class="price-tag px-4 py-2 text-white font-semibold">
+         ₹80
+        </div>
+       </div>
+       <p class="text-slate-300 text-sm leading-relaxed">Crispy puris topped with yogurt, sweet &amp; spicy chutneys, sev &amp; pomegranate seeds.</p>
+       <div class="flex gap-2 mt-3"><span class="text-xs bg-amber-900/50 text-amber-400 px-2 py-1 rounded-full">🥛 Vegetarian</span>
+       </div>
+      </div><!-- Aloo Tikki -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-6 border border-slate-700/50">
+       <div class="flex justify-between items-start mb-3">
+        <div class="flex items-center gap-3"><span class="text-4xl">🥔</span>
+         <div>
+          <h3 class="font-display text-xl text-white">Aloo Tikki Chaat</h3>
+          <p class="text-slate-400 text-sm">Delhi Style</p>
+         </div>
+        </div>
+        <div class="price-tag px-4 py-2 text-white font-semibold">
+         ₹90
+        </div>
+       </div>
+       <p class="text-slate-300 text-sm leading-relaxed">Crispy potato patties served with chole, yogurt, chutneys &amp; fresh coriander. 2 pieces.</p>
+       <div class="flex gap-2 mt-3"><span class="text-xs bg-amber-900/50 text-amber-400 px-2 py-1 rounded-full">🥛 Vegetarian</span> <span class="text-xs bg-blue-900/50 text-blue-400 px-2 py-1 rounded-full">⭐ Chef's Pick</span>
+       </div>
+      </div>
+     </div>
+    </section><!-- Snacks Section -->
+    <section class="mb-12">
+     <div class="flex items-center justify-center gap-3 mb-8"><span class="text-3xl">🍟</span>
+      <h2 class="font-display text-3xl text-white">Street Snacks</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6"><!-- Samosa -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-5 border border-slate-700/50">
+       <div class="text-center mb-3"><span class="text-5xl">🥟</span>
+       </div>
+       <h3 class="font-display text-lg text-white text-center">Samosa</h3>
+       <p class="text-slate-400 text-xs text-center mb-2">Crispy, Spiced Potato</p>
+       <p class="text-amber-400 text-center font-semibold">₹30 / piece</p>
+      </div><!-- Vada Pav -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-5 border border-slate-700/50">
+       <div class="text-center mb-3"><span class="text-5xl">🍔</span>
+       </div>
+       <h3 class="font-display text-lg text-white text-center">Vada Pav</h3>
+       <p class="text-slate-400 text-xs text-center mb-2">Mumbai's Burger</p>
+       <p class="text-amber-400 text-center font-semibold">₹50</p>
+      </div><!-- Pav Bhaji -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-5 border border-slate-700/50">
+       <div class="text-center mb-3"><span class="text-5xl">🫓</span>
+       </div>
+       <h3 class="font-display text-lg text-white text-center">Pav Bhaji</h3>
+       <p class="text-slate-400 text-xs text-center mb-2">Buttery &amp; Rich</p>
+       <p class="text-amber-400 text-center font-semibold">₹120</p>
+      </div><!-- Kathi Roll -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-5 border border-slate-700/50">
+       <div class="text-center mb-3"><span class="text-5xl">🌯</span>
+       </div>
+       <h3 class="font-display text-lg text-white text-center">Paneer Kathi Roll</h3>
+       <p class="text-slate-400 text-xs text-center mb-2">Kolkata Street Food</p>
+       <p class="text-amber-400 text-center font-semibold">₹110</p>
+      </div><!-- Chole Bhature -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-5 border border-slate-700/50">
+       <div class="text-center mb-3"><span class="text-5xl">🫘</span>
+       </div>
+       <h3 class="font-display text-lg text-white text-center">Chole Bhature</h3>
+       <p class="text-slate-400 text-xs text-center mb-2">Punjabi Favorite</p>
+       <p class="text-amber-400 text-center font-semibold">₹130</p>
+      </div><!-- Dosa -->
+      <div class="card-hover bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur rounded-2xl p-5 border border-slate-700/50">
+       <div class="text-center mb-3"><span class="text-5xl">🥞</span>
+       </div>
+       <h3 class="font-display text-lg text-white text-center">Masala Dosa</h3>
+       <p class="text-slate-400 text-xs text-center mb-2">South Indian Classic</p>
+       <p class="text-amber-400 text-center font-semibold">₹100</p>
+      </div>
+     </div>
+    </section><!-- Drinks Section -->
+    <section class="mb-12">
+     <div class="flex items-center justify-center gap-3 mb-8"><span class="text-3xl">🍹</span>
+      <h2 class="font-display text-3xl text-white">Refreshments</h2>
+     </div>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="card-hover bg-gradient-to-br from-amber-900/30 to-orange-900/30 backdrop-blur rounded-xl p-4 border border-amber-700/30 text-center"><span class="text-4xl block mb-2">☕</span>
+       <h3 class="font-display text-white">Masala Chai</h3>
+       <p class="text-amber-400 font-semibold mt-1">₹30</p>
+      </div>
+      <div class="card-hover bg-gradient-to-br from-green-900/30 to-emerald-900/30 backdrop-blur rounded-xl p-4 border border-green-700/30 text-center"><span class="text-4xl block mb-2">🥭</span>
+       <h3 class="font-display text-white">Mango Lassi</h3>
+       <p class="text-amber-400 font-semibold mt-1">₹70</p>
+      </div>
+      <div class="card-hover bg-gradient-to-br from-pink-900/30 to-rose-900/30 backdrop-blur rounded-xl p-4 border border-pink-700/30 text-center"><span class="text-4xl block mb-2">🌹</span>
+       <h3 class="font-display text-white">Rose Sharbat</h3>
+       <p class="text-amber-400 font-semibold mt-1">₹50</p>
+      </div>
+      <div class="card-hover bg-gradient-to-br from-lime-900/30 to-green-900/30 backdrop-blur rounded-xl p-4 border border-lime-700/30 text-center"><span class="text-4xl block mb-2">🍋</span>
+       <h3 class="font-display text-white">Nimbu Pani</h3>
+       <p class="text-amber-400 font-semibold mt-1">₹40</p>
+      </div>
+     </div>
+    </section><!-- Desserts Section -->
+    <section class="mb-8">
+     <div class="flex items-center justify-center gap-3 mb-8"><span class="text-3xl">🍨</span>
+      <h2 class="font-display text-3xl text-white">Sweet Endings</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="card-hover bg-gradient-to-br from-yellow-900/40 to-orange-900/40 backdrop-blur rounded-2xl p-5 border border-yellow-700/30 text-center"><span class="text-5xl block mb-3">🧁</span>
+       <h3 class="font-display text-xl text-white">Gulab Jamun</h3>
+       <p class="text-slate-300 text-sm mt-2">Soft milk dumplings in rose syrup</p>
+       <p class="text-amber-400 font-semibold mt-3">₹60 / 2 pcs</p>
+      </div>
+      <div class="card-hover bg-gradient-to-br from-orange-900/40 to-red-900/40 backdrop-blur rounded-2xl p-5 border border-orange-700/30 text-center"><span class="text-5xl block mb-3">🍩</span>
+       <h3 class="font-display text-xl text-white">Jalebi</h3>
+       <p class="text-slate-300 text-sm mt-2">Crispy spirals soaked in saffron syrup</p>
+       <p class="text-amber-400 font-semibold mt-3">₹50 / plate</p>
+      </div>
+      <div class="card-hover bg-gradient-to-br from-green-900/40 to-teal-900/40 backdrop-blur rounded-2xl p-5 border border-green-700/30 text-center"><span class="text-5xl block mb-3">🍦</span>
+       <h3 class="font-display text-xl text-white">Kulfi</h3>
+       <p class="text-slate-300 text-sm mt-2">Traditional Indian ice cream - Pista/Mango</p>
+       <p class="text-amber-400 font-semibold mt-3">₹70</p>
+      </div>
+     </div>
+    </section>
+   </main><!-- Footer -->
+   <footer class="bg-slate-900/80 backdrop-blur border-t border-slate-700/50 py-6 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+     <p id="footer-text" class="text-slate-400 text-sm mb-3">Made with love &amp; spices 🌶️ • All items freshly prepared</p>
+     <div class="flex justify-center gap-6 text-slate-500 text-xs"><span>🌱 Vegan Options</span> <span>🥛 Vegetarian</span> <span>🌶️ Spice Level Adjustable</span>
+     </div>
+     <div class="decorative-border w-32 mx-auto mt-4 rounded-full opacity-50"></div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      restaurant_name: 'Chaat & Chai',
+      tagline: 'Authentic Flavors from the Streets of India',
+      footer_text: 'Made with love & spices 🌶️ • All items freshly prepared',
+      primary_color: '#1a1a2e',
+      secondary_color: '#ff6b35',
+      text_color: '#ffffff',
+      accent_color: '#ffc107',
+      muted_color: '#94a3b8'
+    };
+
+    let config = { ...defaultConfig };
+
+    async function onConfigChange(cfg) {
+      config = { ...defaultConfig, ...cfg };
+      
+      document.getElementById('restaurant-name').textContent = config.restaurant_name || defaultConfig.restaurant_name;
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              cfg.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              cfg.secondary_color = value;
+              window.elementSdk.setConfig({ secondary_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              cfg.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => cfg.muted_color || defaultConfig.muted_color,
+            set: (value) => {
+              cfg.muted_color = value;
+              window.elementSdk.setConfig({ muted_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || 'Playfair Display',
+          set: (value) => {
+            cfg.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || 16,
+          set: (value) => {
+            cfg.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['restaurant_name', cfg.restaurant_name || defaultConfig.restaurant_name],
+        ['tagline', cfg.tagline || defaultConfig.tagline],
+        ['footer_text', cfg.footer_text || defaultConfig.footer_text]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c773ae5a74d7e9d',t:'MTc3MDAwOTUyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
